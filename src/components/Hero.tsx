@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-carthago-bottle.jpg";
+import heroImage from "@/assets/hero-olive-oil-pour.jpg";
 
 export const Hero = () => {
   return (
@@ -50,7 +50,7 @@ export const Hero = () => {
           <div className="relative animate-scale-in">
             <div className="absolute -inset-4 bg-gradient-to-r from-olive/20 to-gold/20 rounded-3xl blur-2xl"></div>
             <img 
-              src={heroImage} 
+              src="/images/carthago-bottle-elegant.jpg" 
               alt="Carthago Premium Tunisian Extra Virgin Olive Oil bottle displayed with fresh olives and Mediterranean sunlight" 
               className="relative rounded-2xl shadow-2xl w-full h-auto"
             />
