@@ -15,6 +15,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm opacity-80">
               <li><a href="/#products" className="hover:opacity-100 transition-opacity">All Products</a></li>
               <li><a href="/#story" className="hover:opacity-100 transition-opacity">Our Story</a></li>
+              <li><a href="/#recipes" className="hover:opacity-100 transition-opacity">Recipes</a></li>
               <li><a href="/#newsletter" className="hover:opacity-100 transition-opacity">Newsletter</a></li>
             </ul>
           </div>
@@ -22,7 +23,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Learn</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="/#story" className="hover:opacity-100 transition-opacity">About Our Oil</a></li>
+              <li><a href="/#recipes" className="hover:opacity-100 transition-opacity">Tunisian Cuisine</a></li>
               <li><a href="/#products" className="hover:opacity-100 transition-opacity">Health Benefits</a></li>
               <li><a href="/#story" className="hover:opacity-100 transition-opacity">From Grove to Table</a></li>
             </ul>
