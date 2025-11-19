@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { useCartStore } from "@/stores/cartStore";
 import { CartDrawer } from "./CartDrawer";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const items = useCartStore(state => state.items);
@@ -12,15 +13,47 @@ export const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <h1 className="text-2xl font-serif font-bold text-olive">Carthago Oil</h1>
-          </a>
+          </Link>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/#story" className="text-foreground hover:text-olive transition-colors">Our Story</a>
-            <a href="/#products" className="text-foreground hover:text-olive transition-colors">Shop</a>
-            <a href="/#recipes" className="text-foreground hover:text-olive transition-colors">Recipes</a>
-            <a href="/#newsletter" className="text-foreground hover:text-olive transition-colors">Newsletter</a>
+            <button 
+              onClick={() => {
+                const element = document.getElementById('story');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="text-foreground hover:text-olive transition-colors cursor-pointer"
+            >
+              Our Story
+            </button>
+            <button 
+              onClick={() => {
+                const element = document.getElementById('products');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="text-foreground hover:text-olive transition-colors cursor-pointer"
+            >
+              Shop
+            </button>
+            <button 
+              onClick={() => {
+                const element = document.getElementById('recipes');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="text-foreground hover:text-olive transition-colors cursor-pointer"
+            >
+              Recipes
+            </button>
+            <button 
+              onClick={() => {
+                const element = document.getElementById('newsletter');
+                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="text-foreground hover:text-olive transition-colors cursor-pointer"
+            >
+              Newsletter
+            </button>
           </nav>
 
           <div data-cart-button>
