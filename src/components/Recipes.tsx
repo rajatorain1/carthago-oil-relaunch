@@ -20,7 +20,7 @@ const recipes = [
     id: 2,
     title: "Pasta with Carthago Oil",
     subtitle: "Mediterranean Pasta Perfection",
-    image: "/images/recipe-pasta-with-bottle.jpg",
+    image: "/images/recipe-pasta-carthago-pour.jpg",
     time: "20 min",
     servings: "4",
     difficulty: "Easy",
