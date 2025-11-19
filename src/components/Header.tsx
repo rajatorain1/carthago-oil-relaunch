@@ -36,6 +36,12 @@ export const Header = () => {
             >
               Shop
             </button>
+            <Link 
+              to="/knowledge-center"
+              className="text-foreground hover:text-olive transition-colors"
+            >
+              Knowledge Center
+            </Link>
             <button 
               onClick={() => {
                 const element = document.getElementById('recipes');
