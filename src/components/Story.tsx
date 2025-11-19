@@ -1,4 +1,4 @@
-import oliveGroveImage from "@/assets/olive-grove-tunisia.jpg";
+import oliveGroveImage from "@/assets/olive-grove-tunisia-real.jpg";
 
 export const Story = () => {
   return (
