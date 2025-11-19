@@ -45,6 +45,7 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
     addItem(cartItem);
     toast.success("Added to cart! 🎉", {
       description: `${product.node.title} (${firstVariant.title}) added to your cart.`,
+      position: "top-center",
     });
   };
 

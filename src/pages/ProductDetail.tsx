@@ -92,6 +92,7 @@ const ProductDetail = () => {
     addItem(cartItem);
     toast.success("Added to cart! 🎉", {
       description: `${data.title} (${selectedVariant.title}) has been added to your cart.`,
+      position: "top-center",
     });
   };
 
