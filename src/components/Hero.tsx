@@ -51,7 +51,7 @@ export const Hero = () => {
             <div className="absolute -inset-8 bg-gradient-to-r from-olive/30 via-gold/20 to-olive/30 rounded-3xl blur-3xl opacity-60"></div>
             <div className="relative bg-gradient-to-br from-sand/5 to-transparent p-2 rounded-3xl">
               <img 
-                src="/images/hero-carthago-with-dish.jpg" 
+                src="/images/hero-carthago-bright.jpg" 
                 alt="Carthago Premium Tunisian Extra Virgin Olive Oil bottle elegantly displayed with Mediterranean cuisine" 
                 className="relative rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] w-full h-auto"
               />
