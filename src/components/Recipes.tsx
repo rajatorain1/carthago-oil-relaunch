@@ -1,6 +1,8 @@
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Clock, Users, ChefHat } from "lucide-react";
+import { Button } from "./ui/button";
+import { Clock, Users, ChefHat, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const recipes = [
   {
@@ -114,6 +116,14 @@ export const Recipes = () => {
                     {recipe.oilUse}
                   </p>
                 </div>
+
+                {/* Shop Now Button */}
+                <Link to="/product/carthago-oil™-tunisian-extra-virgin-olive-oil" className="block">
+                  <Button className="w-full bg-olive hover:bg-olive/90 text-white group">
+                    <ShoppingCart className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    Shop Carthago Oil
+                  </Button>
+                </Link>
               </div>
             </Card>
           ))}
