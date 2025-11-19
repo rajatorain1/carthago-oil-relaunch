@@ -122,14 +122,16 @@ const ProductDetail = () => {
       <Header />
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="sticky top-24">
               {data.images.edges[0]?.node && (
-                <img 
-                  src={data.images.edges[0].node.url}
-                  alt={data.images.edges[0].node.altText || data.title}
-                  className="w-full rounded-2xl shadow-xl"
-                />
+                <div className="aspect-square overflow-hidden rounded-2xl bg-sand/20 shadow-xl">
+                  <img 
+                    src={data.images.edges[0].node.url}
+                    alt={data.images.edges[0].node.altText || data.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               )}
             </div>
 
