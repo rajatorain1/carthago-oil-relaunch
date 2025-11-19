@@ -22,7 +22,9 @@ export const Header = () => {
             <a href="#newsletter" className="text-foreground hover:text-olive transition-colors">Newsletter</a>
           </nav>
 
-          <CartDrawer />
+          <div data-cart-button>
+            <CartDrawer />
+          </div>
         </div>
       </div>
     </header>

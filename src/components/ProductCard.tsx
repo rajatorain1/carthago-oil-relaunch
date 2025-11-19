@@ -6,6 +6,7 @@ import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { useCartAnimation } from "@/hooks/useCartAnimation";
 
 interface ProductCardProps {
   product: ShopifyProduct;
@@ -15,6 +16,7 @@ interface ProductCardProps {
 export const ProductCard = ({ product, featured = false }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const navigate = useNavigate();
+  const { animateToCart } = useCartAnimation();
   
   const firstVariant = product.node.variants.edges[0]?.node;
   const firstImage = product.node.images.edges[0]?.node;
@@ -22,7 +24,7 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!firstVariant) return;
+    if (!firstVariant || !firstImage) return;
 
     const cartItem = {
       product,
@@ -32,6 +34,13 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
       quantity: 1,
       selectedOptions: firstVariant.selectedOptions || []
     };
+    
+    // Trigger floating animation
+    const button = e.currentTarget as HTMLElement;
+    animateToCart({
+      imageUrl: firstImage.url,
+      startElement: button,
+    });
     
     addItem(cartItem);
     toast.success("Added to cart! 🎉", {
