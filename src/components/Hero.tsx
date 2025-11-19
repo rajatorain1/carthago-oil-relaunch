@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-olive-oil.jpg";
+import heroImage from "@/assets/hero-olive-oil-pour.jpg";
 
 export const Hero = () => {
   return (
@@ -51,7 +51,7 @@ export const Hero = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-olive/20 to-gold/20 rounded-3xl blur-2xl"></div>
             <img 
               src={heroImage} 
-              alt="Premium Tunisian Extra Virgin Olive Oil bottles on Mediterranean counter" 
+              alt="Premium olive oil being poured over fresh Italian pasta - artisanal food photography" 
               className="relative rounded-2xl shadow-2xl w-full h-auto"
             />
           </div>
