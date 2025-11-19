@@ -17,9 +17,9 @@ export const Header = () => {
           </a>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#story" className="text-foreground hover:text-olive transition-colors">Our Story</a>
-            <a href="#products" className="text-foreground hover:text-olive transition-colors">Shop</a>
-            <a href="#newsletter" className="text-foreground hover:text-olive transition-colors">Newsletter</a>
+            <a href="/#story" className="text-foreground hover:text-olive transition-colors">Our Story</a>
+            <a href="/#products" className="text-foreground hover:text-olive transition-colors">Shop</a>
+            <a href="/#newsletter" className="text-foreground hover:text-olive transition-colors">Newsletter</a>
           </nav>
 
           <div data-cart-button>
