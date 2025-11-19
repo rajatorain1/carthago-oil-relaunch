@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2, Check, ShoppingCart } from "lucide-react";
+import { Loader2, Check, ShoppingCart, Star, Shield, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { storefrontApiRequest, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
@@ -89,8 +90,8 @@ const ProductDetail = () => {
     };
     
     addItem(cartItem);
-    toast.success("Added to cart!", {
-      description: `${data.title} has been added to your cart.`,
+    toast.success("Added to cart! 🎉", {
+      description: `${data.title} (${selectedVariant.title}) has been added to your cart.`,
     });
   };
 
@@ -134,44 +135,76 @@ const ProductDetail = () => {
 
             <div className="space-y-8">
               <div>
+                <Badge className="mb-4 bg-olive text-white">Premium Tunisian EVOO</Badge>
                 <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
                   {data.title}
                 </h1>
-                <p className="text-3xl font-bold text-olive">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <span className="text-muted-foreground">(500+ reviews)</span>
+                </div>
+                <p className="text-4xl font-bold text-olive mb-2">
                   ${parseFloat(selectedVariant?.price.amount || data.priceRange.minVariantPrice.amount).toFixed(2)}
                 </p>
+                <div className="flex items-center gap-4 text-sm">
+                  <span className="flex items-center gap-2 text-olive">
+                    <Truck className="w-4 h-4" />
+                    Free shipping over $100
+                  </span>
+                  <span className="flex items-center gap-2 text-olive">
+                    <Shield className="w-4 h-4" />
+                    100% Pure Guarantee
+                  </span>
+                </div>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed border-l-4 border-olive pl-4">
                 {data.description}
               </p>
 
               {data.variants.edges.length > 1 && (
-                <div className="space-y-3">
-                  <label className="font-semibold">Select Size:</label>
-                  <div className="flex flex-wrap gap-3">
+                <div className="space-y-3 p-6 bg-sand rounded-lg">
+                  <label className="font-semibold text-lg">Choose Your Size:</label>
+                  <div className="grid grid-cols-3 gap-3">
                     {data.variants.edges.map((variant: any) => (
                       <Button
                         key={variant.node.id}
                         variant={selectedVariant?.id === variant.node.id ? "default" : "outline"}
                         onClick={() => setSelectedVariant(variant.node)}
-                        className={selectedVariant?.id === variant.node.id ? "bg-olive hover:bg-olive-light" : ""}
+                        className={`h-auto py-4 flex flex-col gap-1 ${
+                          selectedVariant?.id === variant.node.id 
+                            ? "bg-olive hover:bg-olive-light border-2 border-olive" 
+                            : "hover:border-olive"
+                        }`}
                       >
-                        {variant.node.title}
+                        <span className="font-bold">{variant.node.title}</span>
+                        <span className="text-xs">${parseFloat(variant.node.price.amount).toFixed(2)}</span>
                       </Button>
                     ))}
                   </div>
+                  <p className="text-sm text-muted-foreground text-center">
+                    💡 Most popular: 500ml for daily use
+                  </p>
                 </div>
               )}
 
               <Button 
                 onClick={handleAddToCart}
                 size="lg"
-                className="w-full bg-olive hover:bg-olive-light text-lg"
+                className="w-full bg-olive hover:bg-olive-light text-xl py-8 shadow-lg hover:shadow-xl transition-all"
               >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Add to Cart
+                <ShoppingCart className="w-6 h-6 mr-3" />
+                Add {selectedVariant?.title || ''} to Cart
               </Button>
+
+              <div className="flex items-center gap-4 justify-center p-4 bg-sand/50 rounded-lg">
+                <Check className="w-5 h-5 text-olive" />
+                <span className="text-sm">In stock and ready to ship</span>
+              </div>
 
               <div className="border-t border-border pt-8 space-y-6">
                 <div>
