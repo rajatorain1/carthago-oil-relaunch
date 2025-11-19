@@ -53,7 +53,7 @@ export const Hero = () => {
               <img 
                 src="/images/hero-carthago-bright.jpg" 
                 alt="Carthago Premium Tunisian Extra Virgin Olive Oil bottle elegantly displayed with Mediterranean cuisine" 
-                className="relative rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] w-full h-auto"
+                className="relative rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] w-full h-auto min-h-[500px] lg:min-h-[600px] object-cover"
               />
             </div>
           </div>
