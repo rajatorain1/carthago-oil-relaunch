@@ -1,3 +1,6 @@
+# Carthago Oil - Robots.txt
+# Allow all crawlers to index the site
+
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +15,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://carthagooil.org/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

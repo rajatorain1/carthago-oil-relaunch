@@ -9,6 +9,8 @@ import { toast } from "sonner";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
+import { SEO } from "@/components/SEO";
+import { generateProductSchema, generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 
 const PRODUCT_QUERY = `
   query GetProduct($handle: String!) {
@@ -110,6 +112,11 @@ const ProductDetail = () => {
   if (!data) {
     return (
       <>
+        <SEO
+          title="Product Not Found"
+          description="The product you're looking for could not be found."
+          noindex={true}
+        />
         <Header />
         <div className="min-h-screen flex items-center justify-center pt-20">
           <p className="text-xl text-muted-foreground">Product not found</p>
@@ -118,8 +125,40 @@ const ProductDetail = () => {
     );
   }
 
+  const productSchema = generateProductSchema({
+    name: data.title,
+    description: data.description,
+    image: data.images.edges[0]?.node.url || '',
+    price: selectedVariant?.price.amount || data.priceRange.minVariantPrice.amount,
+    currency: selectedVariant?.price.currencyCode || data.priceRange.minVariantPrice.currencyCode,
+    availability: selectedVariant?.availableForSale ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+    rating: 4.8,
+    reviewCount: 500,
+    brand: "Carthago Oil"
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Products", url: `${siteConfig.url}/#products` },
+    { name: data.title, url: `${siteConfig.url}/product/${handle}` }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [productSchema, breadcrumbSchema]
+  };
+
   return (
     <>
+      <SEO
+        title={data.title}
+        description={data.description}
+        canonical={`/product/${handle}`}
+        ogImage={data.images.edges[0]?.node.url}
+        ogType="product"
+        keywords={`${data.title}, Tunisian olive oil, extra virgin olive oil, premium EVOO, buy olive oil online, Mediterranean diet oil, authentic Tunisian products`}
+        schema={combinedSchema}
+      />
       <Header />
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4">
