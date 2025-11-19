@@ -6,6 +6,7 @@ import { ProblemSolution } from "@/components/ProblemSolution";
 import { ValueComparison } from "@/components/ValueComparison";
 import { Story } from "@/components/Story";
 import { ProductGrid } from "@/components/ProductGrid";
+import { Recipes } from "@/components/Recipes";
 import { SocialProof } from "@/components/SocialProof";
 import { Guarantee } from "@/components/Guarantee";
 import { Newsletter } from "@/components/Newsletter";
@@ -23,6 +24,7 @@ const Index = () => {
       <ValueComparison />
       <Story />
       <ProductGrid />
+      <Recipes />
       <SocialProof />
       <Guarantee />
       <FinalCTA />
