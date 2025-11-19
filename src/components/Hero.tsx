@@ -47,13 +47,15 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="relative animate-scale-in">
-            <div className="absolute -inset-4 bg-gradient-to-r from-olive/20 to-gold/20 rounded-3xl blur-2xl"></div>
-            <img 
-              src="/images/carthago-bottle-elegant.jpg" 
-              alt="Carthago Premium Tunisian Extra Virgin Olive Oil bottle displayed with fresh olives and Mediterranean sunlight" 
-              className="relative rounded-2xl shadow-2xl w-full h-auto"
-            />
+          <div className="relative animate-scale-in lg:scale-110">
+            <div className="absolute -inset-8 bg-gradient-to-r from-olive/30 via-gold/20 to-olive/30 rounded-3xl blur-3xl opacity-60"></div>
+            <div className="relative bg-gradient-to-br from-sand/5 to-transparent p-2 rounded-3xl">
+              <img 
+                src="/images/hero-carthago-with-dish.jpg" 
+                alt="Carthago Premium Tunisian Extra Virgin Olive Oil bottle elegantly displayed with Mediterranean cuisine" 
+                className="relative rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
