@@ -6,8 +6,8 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-b from-sand to-background">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in">
+        <div className="grid lg:grid-cols-[45%_55%] gap-8 xl:gap-16 items-center max-w-7xl mx-auto">
+          <div className="space-y-6 lg:space-y-8 animate-fade-in lg:pr-8">
             <div className="inline-block px-4 py-2 bg-olive/10 rounded-full">
               <p className="text-sm font-semibold text-olive">✨ Single-Origin • Cold-Pressed • No Additives</p>
             </div>
@@ -47,7 +47,7 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="relative animate-scale-in lg:scale-110">
+          <div className="relative animate-scale-in lg:scale-125 xl:scale-[1.35]">
             <div className="absolute -inset-8 bg-gradient-to-r from-olive/30 via-gold/20 to-olive/30 rounded-3xl blur-3xl opacity-60"></div>
             <div className="relative bg-gradient-to-br from-sand/5 to-transparent p-2 rounded-3xl">
               <img 
