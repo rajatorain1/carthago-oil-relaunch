@@ -16,6 +16,17 @@ const recipes = [
   },
   {
     id: 2,
+    title: "Pasta with Carthago Oil",
+    subtitle: "Mediterranean Pasta Perfection",
+    image: "/images/recipe-pasta-pouring.jpg",
+    time: "20 min",
+    servings: "4",
+    difficulty: "Easy",
+    description: "Simple pasta elevated to perfection with the golden pour of Carthago Oil, fresh basil, and sun-dried tomatoes. A celebration of quality ingredients.",
+    oilUse: "Finish with 2-3 tbsp poured directly over hot pasta",
+  },
+  {
+    id: 3,
     title: "Slata Tunisiya",
     subtitle: "Classic Tunisian Salad",
     image: "/images/recipe-salad.jpg",
@@ -24,17 +35,6 @@ const recipes = [
     difficulty: "Easy",
     description: "A vibrant, refreshing salad combining tomatoes, cucumbers, peppers, and onions with our cold-pressed olive oil and spices.",
     oilUse: "Mix 4 tbsp with lemon juice and harissa for dressing",
-  },
-  {
-    id: 3,
-    title: "Tunisian Mezze Platter",
-    subtitle: "Hummus & Roasted Vegetables",
-    image: "/images/recipe-hummus.jpg",
-    time: "30 min",
-    servings: "6",
-    difficulty: "Medium",
-    description: "An authentic mezze spread featuring silky hummus topped with our golden olive oil, paired with warm pita and Mediterranean vegetables.",
-    oilUse: "Create a well in hummus and fill with olive oil, garnish vegetables",
   },
 ];
 
