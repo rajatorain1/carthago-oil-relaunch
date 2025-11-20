@@ -12,7 +12,9 @@ import {
   ChefHat, 
   ShoppingBag,
   BookOpen,
-  ArrowRight
+  ArrowRight,
+  Calculator,
+  Calendar
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { generateWebPageSchema, siteConfig } from "@/lib/seo";
@@ -177,6 +179,64 @@ const KnowledgeCenter = () => {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Tools */}
+        <section className="py-20 bg-primary/5">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-serif font-bold text-center mb-4">
+              Interactive Tools
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Free calculators to help you get the most from your olive oil
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Link to="/calculators/olive-oil-freshness">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 group border-primary/20">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Calendar className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-2xl font-serif group-hover:text-primary transition-colors">
+                      Olive Oil Freshness Calculator
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      Check if your EVOO is still at peak quality based on harvest date. Get instant recommendations on optimal usage.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-primary group-hover:translate-x-2 transition-transform">
+                      <span className="font-medium">Try Calculator</span>
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/calculators/daily-intake">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 group border-primary/20">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Calculator className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-2xl font-serif group-hover:text-primary transition-colors">
+                      Daily Olive Oil Intake Calculator
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      Calculate your optimal daily amount based on Mediterranean diet guidelines and personal health goals.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-primary group-hover:translate-x-2 transition-transform">
+                      <span className="font-medium">Try Calculator</span>
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>

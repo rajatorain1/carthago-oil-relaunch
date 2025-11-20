@@ -40,6 +40,21 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Interactive Calculators -->
+  <url>
+    <loc>https://carthagooil.org/calculators/olive-oil-freshness</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://carthagooil.org/calculators/daily-intake</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Product Pages -->
   <url>
     <loc>https://carthagooil.org/product/carthago-oil™-tunisian-extra-virgin-olive-oil</loc>
