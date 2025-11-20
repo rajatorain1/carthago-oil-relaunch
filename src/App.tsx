@@ -9,6 +9,8 @@ import KnowledgeCenter from "./pages/KnowledgeCenter";
 import OliveOilHealthBenefits from "./pages/articles/OliveOilHealthBenefits";
 import AuthenticOliveOil from "./pages/articles/AuthenticOliveOil";
 import MediterraneanDiet from "./pages/articles/MediterraneanDiet";
+import OliveOilFreshnessCalculator from "./pages/calculators/OliveOilFreshnessCalculator";
+import DailyIntakeCalculator from "./pages/calculators/DailyIntakeCalculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -35,6 +37,8 @@ const App = () => {
             <Route path="/knowledge-center/olive-oil-health-benefits-complete-guide" element={<OliveOilHealthBenefits />} />
             <Route path="/knowledge-center/how-to-identify-authentic-extra-virgin-olive-oil" element={<AuthenticOliveOil />} />
             <Route path="/knowledge-center/mediterranean-diet-beginners-guide" element={<MediterraneanDiet />} />
+            <Route path="/calculators/olive-oil-freshness" element={<OliveOilFreshnessCalculator />} />
+            <Route path="/calculators/daily-intake" element={<DailyIntakeCalculator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

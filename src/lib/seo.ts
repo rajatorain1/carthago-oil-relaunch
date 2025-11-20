@@ -195,6 +195,37 @@ export const generateWebPageSchema = (page: {
   }
 });
 
+// Generate WebApplication Schema (for calculators and tools)
+export const generateWebApplicationSchema = (app: {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory: string;
+  offers?: {
+    price: string;
+    priceCurrency: string;
+  };
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: app.name,
+  description: app.description,
+  url: app.url,
+  applicationCategory: app.applicationCategory,
+  browserRequirements: "Requires JavaScript. Requires HTML5.",
+  ...(app.offers && {
+    offers: {
+      "@type": "Offer",
+      price: app.offers.price,
+      priceCurrency: app.offers.priceCurrency
+    }
+  }),
+  author: {
+    "@type": "Organization",
+    name: "Carthago Oil"
+  }
+});
+
 // Helper to insert schema into page
 export const insertSchema = (schema: any) => {
   if (typeof window === 'undefined') return;
